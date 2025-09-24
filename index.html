@@ -71,47 +71,154 @@
     </nav>
 
     <!-- Tab Content -->
-    <div class="tab-content-wrapper">
-        <!-- General -->
-        <div id="general" class="tab-content active">Select a submenu in <b>General</b></div>
-        <div id="general-currencies" class="tab-content">General → Currencies Search Content</div>
-        <div id="general-rate" class="tab-content">General → Currencies Rate Content</div>
-        <div id="general-market" class="tab-content">General → Market Search Content</div>
-        <div id="general-countries" class="tab-content">General → Countries Search Content</div>
-        <div id="general-cities" class="tab-content">General → Cities Search Content</div>
-        <div id="general-countrygroup" class="tab-content">General → Country Group Content</div>
+    <main>
+        <div class="tab-content-wrapper">
+            <!-- General -->
+            <div id="general" class="tab-content active">Select a submenu in <b>General</b></div>
+            <div id="general-currencies" class="tab-content">
 
-        <!-- Suppliers -->
-        <div id="suppliers" class="tab-content">Select a submenu in <b>Suppliers</b></div>
-        <div id="sup-sector" class="tab-content">Suppliers → Sector Content</div>
-        <div id="sup-type" class="tab-content">Suppliers → Supplier Type Content</div>
-        <div id="sup-cat" class="tab-content">Suppliers → Supplier Categories Content</div>
-        <div id="sup-hotelchain" class="tab-content">Suppliers → Hotel Chain Content</div>
-        <div id="sup-agent" class="tab-content">Suppliers → Supplier Agent Content</div>
-        <div id="sup-room" class="tab-content">Suppliers → Room Classification Content</div>
 
-        <!-- Products -->
-        <div id="products" class="tab-content">Select a submenu in <b>Products</b></div>
-        <div id="prod-groups" class="tab-content">Products → Hotel Groups Content</div>
-        <div id="prod-markup" class="tab-content">Products → Apply Markup - New Content</div>
-        <div id="prod-countries" class="tab-content">Products → Apply Markup - Countries Content</div>
 
-        <!-- Other Services -->
-        <div id="otherservices" class="tab-content">Select a submenu in <b>Other Services</b></div>
-        <div id="os-grouplist" class="tab-content">Other Services → Group List Content</div>
-        <div id="os-types" class="tab-content">Other Services → Types Content</div>
-        <div id="os-pricelist" class="tab-content">Other Services → Pricelist Search Content</div>
 
-        <!-- Customers -->
-        <div id="customers" class="tab-content">Select a submenu in <b>Customers</b></div>
-        <div id="cust-categories" class="tab-content">Customers → Categories Content</div>
-        <div id="cust-sector" class="tab-content">Customers → Sector Content</div>
 
-        <!-- Reports -->
-        <div id="reports" class="tab-content">Select a submenu in <b>Reports</b></div>
-        <div id="rep-main" class="tab-content">Reports → Coming Soon...</div>
-    </div>
 
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>General → Currencies Search Content</small>
+                        <h3>
+                            Currencies List</h3>
+                        <div class="action-s">
+                            <button class="btn-s">Add New</button>
+                        </div>
+
+                    </div>
+
+                    <div class="search-bar">
+                        <label>Currency: <input type="radio" name="search" checked></label>
+                        <label>Text: <input type="radio" name="search"></label>
+                        <button class="btn-s">Reset Search</button>
+
+                    </div>
+
+                    <div class="export-bar">
+                        <label>Filter By
+                            <select>
+                                <option>Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date">
+                        To <input type="date">
+                        <button class="btn-s">Search by Date</button>
+                        <button class="btn-s">Reset Dates</button>
+                        Rows Selected
+                        <select>
+                            <option>20</option>
+                            <option>50</option>
+                        </select>
+                        <button class="btn-s">Export To Excel</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Currency Code</th>
+                                <th>Currency Name</th>
+                                <th>Currency Coin</th>
+                                <th>Exch. Rate</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AED</td>
+                                <td>DIRHAM</td>
+                                <td>FILS</td>
+                                <td>1.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>14/07/2023 10:08:31</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AFN</td>
+                                <td>AFN</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+
+                    <div class="pagination">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#">9</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div id="general-rate" class="tab-content">General → Currencies Rate Content</div>
+            <div id="general-market" class="tab-content">General → Market Search Content</div>
+            <div id="general-countries" class="tab-content">General → Countries Search Content</div>
+            <div id="general-cities" class="tab-content">General → Cities Search Content</div>
+            <div id="general-countrygroup" class="tab-content">General → Country Group Content</div>
+
+            <!-- Suppliers -->
+            <div id="suppliers" class="tab-content">Select a submenu in <b>Suppliers</b></div>
+            <div id="sup-sector" class="tab-content">Suppliers → Sector Content</div>
+            <div id="sup-type" class="tab-content">Suppliers → Supplier Type Content</div>
+            <div id="sup-cat" class="tab-content">Suppliers → Supplier Categories Content</div>
+            <div id="sup-hotelchain" class="tab-content">Suppliers → Hotel Chain Content</div>
+            <div id="sup-agent" class="tab-content">Suppliers → Supplier Agent Content</div>
+            <div id="sup-room" class="tab-content">Suppliers → Room Classification Content</div>
+
+            <!-- Products -->
+            <div id="products" class="tab-content">Select a submenu in <b>Products</b></div>
+            <div id="prod-groups" class="tab-content">Products → Hotel Groups Content</div>
+            <div id="prod-markup" class="tab-content">Products → Apply Markup - New Content</div>
+            <div id="prod-countries" class="tab-content">Products → Apply Markup - Countries Content</div>
+
+            <!-- Other Services -->
+            <div id="otherservices" class="tab-content">Select a submenu in <b>Other Services</b></div>
+            <div id="os-grouplist" class="tab-content">Other Services → Group List Content</div>
+            <div id="os-types" class="tab-content">Other Services → Types Content</div>
+            <div id="os-pricelist" class="tab-content">Other Services → Pricelist Search Content</div>
+
+            <!-- Customers -->
+            <div id="customers" class="tab-content">Select a submenu in <b>Customers</b></div>
+            <div id="cust-categories" class="tab-content">Customers → Categories Content</div>
+            <div id="cust-sector" class="tab-content">Customers → Sector Content</div>
+
+            <!-- Reports -->
+            <div id="reports" class="tab-content">Select a submenu in <b>Reports</b></div>
+            <div id="rep-main" class="tab-content">Reports → Coming Soon...</div>
+        </div>
+    </main>
     <script>
         const tabs = document.querySelectorAll("#menuTabs li, .submenu li");
         const contents = document.querySelectorAll(".tab-content");
