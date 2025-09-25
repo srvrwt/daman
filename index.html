@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Tawfeeq Holidays</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -13,7 +14,7 @@
         <p class="login-info"> Current Date : 04/11/2024, 08:18:34 Logged As : Faiyaz
         </p>
         <h1>LOGO</h1>
-        <span><a href="#" class="btn-logout">Logout</a></span>
+        <span><a href="#" class="btn-s black-s">Logout</a></span>
     </header>
 
 
@@ -84,41 +85,49 @@
 
                 <div class="page-wrapper">
                     <div class="page-header">
-                        <small>General → Currencies Search Content</small>
+                        <small>General → Currencies Search</small>
                         <h3>
                             Currencies List</h3>
                         <div class="action-s">
-                            <button class="btn-s">Add New</button>
+                            <button class="btn-s red-s">Add New</button>
                         </div>
 
                     </div>
 
-                    <div class="search-bar">
-                        <label>Currency: <input type="radio" name="search" checked></label>
-                        <label>Text: <input type="radio" name="search"></label>
-                        <button class="btn-s">Reset Search</button>
 
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input id="searchCurrency" type="search" placeholder="Currency:">
+                        </div>
+                        <div class="search-wrap">
+                            <input id="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button id="resetSearch" class="btn-s black-s">Reset Search</button>
                     </div>
 
                     <div class="export-bar">
                         <label>Filter By
-                            <select>
-                                <option>Created Date</option>
+                            <select id="filterField">
+                                <option value="dateCreated">Created Date</option>
                             </select>
                         </label>
-                        From <input type="date">
-                        To <input type="date">
-                        <button class="btn-s">Search by Date</button>
-                        <button class="btn-s">Reset Dates</button>
+                        From <input type="date" id="dateFrom">
+                        To <input type="date" id="dateTo">
+                        <button id="searchByDate" class="btn-s black-s">Search by Date</button>
+                        <button id="resetDates" class="btn-s black-s">Reset Dates</button>
                         Rows Selected
-                        <select>
-                            <option>20</option>
-                            <option>50</option>
+                        <select id="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+
                         </select>
-                        <button class="btn-s">Export To Excel</button>
+                        <button id="exportExcel" class="btn-s black-s">Export To Excel</button>
                     </div>
 
-                    <table>
+                    <table id="currencyTable">
                         <thead>
                             <tr>
                                 <th>Currency Code</th>
@@ -162,9 +171,318 @@
                                 <td class="action-links"><a href="#">View</a></td>
                                 <td class="action-links"><a href="#">Delete</a></td>
                             </tr>
-                            <!-- Add more rows as needed -->
+                            <tr>
+                                <td>ALL</td>
+                                <td>ALL</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AMD</td>
+                                <td>AMD</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ANG</td>
+                                <td>ANG</td>
+                                <td></td>
+                                <td>2.350000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AOA</td>
+                                <td>AOA</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ARS</td>
+                                <td>ARS</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AUD</td>
+                                <td>Australian Dollar</td>
+                                <td>CENT</td>
+                                <td>10.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AWG</td>
+                                <td>AWG</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AZN</td>
+                                <td>AZN</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>BAM</td>
+                                <td>BAM</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>BOB</td>
+                                <td>BOB</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AED</td>
+                                <td>DIRHAM</td>
+                                <td>FILS</td>
+                                <td>1.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>14/07/2023 10:08:31</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AFN</td>
+                                <td>AFN</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ALL</td>
+                                <td>ALL</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AMD</td>
+                                <td>AMD</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ANG</td>
+                                <td>ANG</td>
+                                <td></td>
+                                <td>2.350000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AOA</td>
+                                <td>AOA</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ARS</td>
+                                <td>ARS</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AUD</td>
+                                <td>Australian Dollar</td>
+                                <td>CENT</td>
+                                <td>10.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AWG</td>
+                                <td>AWG</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AZN</td>
+                                <td>AZN</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>BAM</td>
+                                <td>BAM</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>BOB</td>
+                                <td>BOB</td>
+                                <td></td>
+                                <td>0.000000</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
                         </tbody>
                     </table>
+                    <div id="pagination" style="margin-top: 10px;"></div>
+
 
                     <div class="pagination">
                         <a href="#">1</a>
@@ -219,30 +537,9 @@
             <div id="rep-main" class="tab-content">Reports → Coming Soon...</div>
         </div>
     </main>
-    <script>
-        const tabs = document.querySelectorAll("#menuTabs li, .submenu li");
-        const contents = document.querySelectorAll(".tab-content");
-        const mainTabs = document.querySelectorAll("#menuTabs > li");
 
-        tabs.forEach(tab => {
-            tab.addEventListener("click", (e) => {
-                e.stopPropagation();
-                e.preventDefault();
 
-                // Reset
-                contents.forEach(c => c.classList.remove("active"));
-                tabs.forEach(t => t.classList.remove("active"));
-
-                // Activate clicked
-                tab.classList.add("active");
-                document.getElementById(tab.dataset.tab).classList.add("active");
-
-                // If submenu clicked → keep parent main tab active
-                let parentLi = tab.closest("#menuTabs > li");
-                if (parentLi) parentLi.classList.add("active");
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

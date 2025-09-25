@@ -1,13 +1,12 @@
 :root {
-    --primary: #282c43;
-    --primary-dark: #020027;
-    --secondary: #df4b26;
+    --red: #C1554E;
+    --grey: #E4E4E4;
+    --black: #020027;
+    --heading: #282c43;
     --white: #ffffff;
-    --light-bg: #e9eaec;
     --text: #6b6e73;
     --border: #d6d8d9;
-    --hover-bg: #f0f0f0;
-
+    --yellow: #F6B53B;
 }
 
 * {
@@ -15,12 +14,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins Regular';
-    color: var(--primary);
+    color: var(--heading);
 
 }
 
 body {
-    background-color: var(--light-bg);
+    background-color: var(--grey);
 }
 
 @font-face {
@@ -47,8 +46,7 @@ body {
 
 p,
 a,
-span,
-label {
+span {
     font-size: 14px;
 }
 
@@ -67,7 +65,7 @@ a {
 
 body {
     font-family: Arial, sans-serif;
-    background: var(--light-bg);
+    background: var(--grey);
     color: var(--text);
 }
 
@@ -92,21 +90,8 @@ main {
     text-align: left;
 }
 
-.btn-logout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .5rem 1rem;
-    background: var(--primary-dark);
-    width: max-content;
-    border-radius: 4px;
-    color: var(--white);
-    margin: 0 0 0 auto;
-    transition: all 200ms ease-in-out;
-}
-
 .btn-logout:hover {
-    background-color: var(--secondary);
+    background-color: var(--red);
 }
 
 .header-bar a {
@@ -114,7 +99,7 @@ main {
 }
 
 .app-title {
-    background: var(--secondary);
+    background: var(--red);
     color: var(--white);
     padding: 12px;
     font-weight: bold;
@@ -129,7 +114,7 @@ main {
     list-style: none;
     display: flex;
     gap: 2rem;
-    padding: 1rem 0;
+    padding: 1rem 0 .5rem;
     border-top: 1px solid var(--border);
 }
 
@@ -138,7 +123,7 @@ main {
 }
 
 .main-nav>ul>li.active a {
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid var(--heading);
 }
 
 .main-nav {
@@ -207,10 +192,10 @@ main {
 }
 
 .page-header {
-    background: var(--primary);
+    background: var(--heading);
     color: var(--white);
     text-align: center;
-    padding: .5rem;
+    padding: .5rem .5rem .5rem 1rem;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -236,11 +221,9 @@ main {
     align-items: center;
     justify-content: center;
     padding: .5rem 1rem;
-    background: var(--secondary);
     width: max-content;
     border-radius: 4px;
     color: var(--white);
-    margin: 0 0 0 auto;
     transition: all 200ms ease-in-out;
     border: none;
     font-family: 'Poppins Medium';
@@ -248,9 +231,34 @@ main {
     cursor: pointer;
 }
 
-.btn-s:hover {
-    background: #ffffff;
-    color: var(--primary);
+.action-links a:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.btn-s.red-s {
+    background: var(--red);
+}
+
+.btn-s.black-s {
+    background: var(--heading);
+}
+
+.btn-s.black-s:hover {
+    background: var(--red);
+}
+
+.btn-s.red-s:hover {
+    background: var(--heading);
+}
+
+.page-header .btn-s:hover {
+    background: var(--white);
+    color: var(--heading);
+}
+
+.header-bar>span {
+    text-align: right;
 }
 
 .page-header>* {
@@ -264,7 +272,7 @@ main {
 }
 
 .top-actions button {
-    background: var(--primary-light);
+    background: var(--heading-light);
     border: none;
     padding: 6px 12px;
     color: var(--white);
@@ -281,21 +289,7 @@ main {
     flex-wrap: wrap;
 }
 
-.search-bar input,
-.search-bar select {
-    padding: 4px 6px;
-    border: 1px solid var(--border);
-    font-size: 13px;
-}
 
-.search-bar button {
-    padding: 4px 8px;
-    background: var(--primary-light);
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-    font-size: 13px;
-}
 
 .export-bar {
     padding: 1rem 0;
@@ -309,15 +303,6 @@ main {
     margin-left: .2rem;
 }
 
-.export-bar button {
-    background: var(--primary);
-}
-
-.export-bar button:hover {
-    background-color: var(--secondary);
-    color: var(--white);
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -327,7 +312,7 @@ table {
 table th,
 table td {
     border: 1px solid var(--border);
-    padding: 6px;
+    padding: .5rem;
     text-align: left;
 }
 
@@ -351,4 +336,44 @@ table th {
     margin: 0 4px;
     text-decoration: none;
     color: var(--link);
+}
+
+.export-bar input,
+.export-bar select,
+.search-bar input {
+    padding: .4rem .6rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    outline: none;
+}
+
+.export-bar select {
+    cursor: pointer;
+}
+
+.search-bar input {
+    padding-left: 36px;
+}
+
+.search-wrap {
+    position: relative;
+}
+
+.search-wrap:after {
+    position: absolute;
+    left: .6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    content: "";
+    background-image: url('data:image/svg+xml,<svg height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><title/><path fill="%236b6e73" d="M456.69,421.39,362.6,327.3a173.81,173.81,0,0,0,34.84-104.58C397.44,126.38,319.06,48,222.72,48S48,126.38,48,222.72s78.38,174.72,174.72,174.72A173.81,173.81,0,0,0,327.3,362.6l94.09,94.09a25,25,0,0,0,35.3-35.3ZM97.92,222.72a124.8,124.8,0,1,1,124.8,124.8A124.95,124.95,0,0,1,97.92,222.72Z"/></svg>');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: .5;
+}
+
+button.btn-s.red-s-black:hover {
+    background: var(--black);
 }
