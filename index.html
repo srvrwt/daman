@@ -11,9 +11,17 @@
 <body>
     <!-- Header -->
     <header class="header-bar">
-        <p class="login-info"> Current Date : 04/11/2024, 08:18:34 Logged As : Faiyaz
-        </p>
-        <h1>LOGO</h1>
+        <p class="login-info">Current Date : <span id="datetime"></span> Logged As : Admin</p>
+        <script>
+            function updateTime() {
+                document.getElementById("datetime").textContent =
+                    new Date().toLocaleString("en-GB");
+            }
+            updateTime();
+            setInterval(updateTime, 1000);
+        </script>
+
+        <h1 class="logo"><img src="/icon/tollanis-logo.png" alt="Tallanis"></h1>
         <span><a href="#" class="btn-s black-s">Logout</a></span>
     </header>
 
@@ -76,13 +84,9 @@
         <div class="tab-content-wrapper">
             <!-- General -->
             <div id="general" class="tab-content active">Select a submenu in <b>General</b></div>
+
+            <!-- General → Currencies Search -->
             <div id="general-currencies" class="tab-content">
-
-
-
-
-
-
                 <div class="page-wrapper">
                     <div class="page-header">
                         <small>General → Currencies Search</small>
@@ -97,37 +101,37 @@
 
                     <div class="search-bar">
                         <div class="search-wrap">
-                            <input id="searchCurrency" type="search" placeholder="Currency:">
+                            <input class="searchCurrency" type="search" placeholder="Currency">
                         </div>
+
                         <div class="search-wrap">
-                            <input id="searchText" type="search" placeholder="Text">
+                            <input class="searchText" type="search" placeholder="Text">
                         </div>
-                        <button id="resetSearch" class="btn-s black-s">Reset Search</button>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
                     </div>
 
-                    <div class="export-bar">
+                    <div class="table-filter">
                         <label>Filter By
-                            <select id="filterField">
+                            <select class="filterField">
                                 <option value="dateCreated">Created Date</option>
                             </select>
                         </label>
-                        From <input type="date" id="dateFrom">
-                        To <input type="date" id="dateTo">
-                        <button id="searchByDate" class="btn-s black-s">Search by Date</button>
-                        <button id="resetDates" class="btn-s black-s">Reset Dates</button>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
                         Rows Selected
-                        <select id="rowsPerPage">
+                        <select class="rowsPerPage">
                             <option value="10">10</option>
                             <option value="20">20</option>
                             <option value="30">30</option>
                             <option value="40">40</option>
                             <option value="50">50</option>
-
                         </select>
-                        <button id="exportExcel" class="btn-s black-s">Export To Excel</button>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
                     </div>
 
-                    <table id="currencyTable">
+                    <table id="table">
                         <thead>
                             <tr>
                                 <th>Currency Code</th>
@@ -481,8 +485,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div id="pagination" style="margin-top: 10px;"></div>
-
 
                     <div class="pagination">
                         <a href="#">1</a>
@@ -496,15 +498,545 @@
                         <a href="#">9</a>
                     </div>
                 </div>
+            </div>
+            <!-- General → Currencies Rate -->
+            <div id="general-rate" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small class="p-left">General → Currencies Conversion Rate</small>
+                        <h3>Currencies Conversion Rate</h3>
+                    </div>
 
 
+                    <div class="table-filter">
+                        <label>From Currency
+                            <select id="fromCurrency">
+                                <option value="">Select</option>
+                            </select>
+                        </label>
+
+                        <label>To Currency
+                            <select id="toCurrency">
+                                <option value="">Select</option>
+                            </select>
+                        </label>
+
+                        <button id="fillBtn" class="btn-s black-s">Fill</button>
+                        <button id="exportExcelBtn" class="btn-s black-s exportExcelBtn">Export To Excel</button>
+                    </div>
+
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>From Currency</th>
+                                <th>Conversion</th>
+                                <th>To Currency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 AED=</td>
+                                <td>1.0000000000</td>
+                                <td>AED</td>
+                            </tr>
+                            <tr>
+                                <td>1 AED=</td>
+                                <td>0.2500000000</td>
+                                <td>EUR</td>
+                            </tr>
+                            <tr>
+                                <td>1 AED=</td>
+                                <td>1.0000000000</td>
+                                <td>QAR</td>
+                            </tr>
+                            <tr>
+                                <td>1 AED=</td>
+                                <td>1.0160000000</td>
+                                <td>SAR</td>
+                            </tr>
+                            <tr>
+                                <td>1 AED=</td>
+                                <td>0.2700000000</td>
+                                <td>USD</td>
+                            </tr>
+                            <tr>
+                                <td>1 AFN=</td>
+                                <td>1.0000000000</td>
+                                <td>AFN</td>
+                            </tr>
+                            <tr>
+                                <td>1 ALL=</td>
+                                <td>1.0000000000</td>
+                                <td>ALL</td>
+                            </tr>
+                            <tr>
+                                <td>1 AMD=</td>
+                                <td>1.0000000000</td>
+                                <td>AMD</td>
+                            </tr>
+                            <tr>
+                                <td>1 ANG=</td>
+                                <td>1.0000000000</td>
+                                <td>ANG</td>
+                            </tr>
+                            <tr>
+                                <td>1 AOA=</td>
+                                <td>1.0000000000</td>
+                                <td>AOA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="buttons">
+                        <button class="btn-s black-s">Exit</button>
+                        <button class="btn-s red-s">Save</button>
+                    </div>
+                </div>
+            </div>
+            <!-- General → Market Search -->
+            <div id="general-market" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>General → Market Search</small>
+                        <h3>Regions List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+
+                        <div class="search-wrap">
+                            <input class="searchRegion" type="search" placeholder="Region">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Region Code</th>
+                                <th>Region Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AF</td>
+                                <td>Africa</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AN</td>
+                                <td>Antarctica</td>
+                                <td>Active</td>
+                                <td>15/08/2021 17:11:42</td>
+                                <td>admin</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AS</td>
+                                <td>Asia</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>EU</td>
+                                <td>Europe</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>15/08/2021 17:11:42</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>North America</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>OC</td>
+                                <td>Oceania</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>REG/00034</td>
+                                <td>Middle East</td>
+                                <td>Active</td>
+                                <td>16/08/2021 10:48:18</td>
+                                <td>admin</td>
+                                <td>16/08/2021 10:48:18</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>SA</td>
+                                <td>South America</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+                </div>
 
             </div>
-            <div id="general-rate" class="tab-content">General → Currencies Rate Content</div>
-            <div id="general-market" class="tab-content">General → Market Search Content</div>
-            <div id="general-countries" class="tab-content">General → Countries Search Content</div>
-            <div id="general-cities" class="tab-content">General → Cities Search Content</div>
-            <div id="general-countrygroup" class="tab-content">General → Country Group Content</div>
+            <!-- General → Countries Search -->
+            <div id="general-countries" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>General → Countries Search </small>
+                        <h3>Countries List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+
+                        <div class="search-wrap">
+                            <input class="searchRegion" type="search" placeholder="Region">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCountry" type="search" placeholder="Country">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCurrency" type="search" placeholder="Currency">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchProvider" type="search" placeholder="Country Provider">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Country Code</th>
+                                <th>Country Name</th>
+                                <th>Currency Name</th>
+                                <th>Region Name</th>
+                                <th>Country Provider</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AD</td>
+                                <td>Andorra</td>
+                                <td>EUR</td>
+                                <td>Europe</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>07/07/2023 02:34:03 PM</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AE</td>
+                                <td>United Arab Emirates</td>
+                                <td>DIRHAM</td>
+                                <td>Asia</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>16/08/2021 10:51:01 AM</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AF</td>
+                                <td>Afghanistan</td>
+                                <td>AFN</td>
+                                <td>Asia</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AG</td>
+                                <td>Antigua and Barbuda</td>
+                                <td>XCD</td>
+                                <td>North America</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AI</td>
+                                <td>Anguilla</td>
+                                <td>XCD</td>
+                                <td>North America</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AL</td>
+                                <td>Albania</td>
+                                <td>ALL</td>
+                                <td>Europe</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AM</td>
+                                <td>Armenia</td>
+                                <td>AMD</td>
+                                <td>Asia</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AO</td>
+                                <td>Angola</td>
+                                <td>AOA</td>
+                                <td>Africa</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AR</td>
+                                <td>Argentina</td>
+                                <td>ARS</td>
+                                <td>South America</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AS</td>
+                                <td>American Samoa</td>
+                                <td>USD</td>
+                                <td>Oceania</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AT</td>
+                                <td>Austria</td>
+                                <td>EUR</td>
+                                <td>Europe</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AU</td>
+                                <td>Australia</td>
+                                <td>Australian Dollar</td>
+                                <td>Oceania</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>AW</td>
+                                <td>Aruba</td>
+                                <td>AWG</td>
+                                <td>North America</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- General → Cities Search -->
+            <div id="general-cities" class="tab-content">General → Cities Search</div>
+            <!-- General → Country Group -->
+            <div id="general-countrygroup" class="tab-content">General → Country Group</div>
 
             <!-- Suppliers -->
             <div id="suppliers" class="tab-content">Select a submenu in <b>Suppliers</b></div>

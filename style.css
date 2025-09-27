@@ -69,6 +69,20 @@ body {
     color: var(--text);
 }
 
+img {
+    width: 100%;
+    display: block;
+}
+
+small.p-left {
+    position: absolute;
+    width: max-content;
+}
+
+.logo {
+    max-width: 220px;
+}
+
 main {
     padding: 1rem 2rem;
 }
@@ -104,6 +118,11 @@ main {
     padding: 12px;
     font-weight: bold;
     font-size: 18px;
+}
+
+#datetime {
+    min-width: 150px;
+    display: inline-block;
 }
 
 .main-nav ul {
@@ -199,6 +218,7 @@ main {
     border-radius: 4px;
     display: flex;
     align-items: center;
+    min-height: 52.8px;
     gap: 1rem;
     justify-content: space-between;
 }
@@ -206,6 +226,13 @@ main {
 .page-header small,
 .page-header h3 {
     color: var(--white);
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem auto 0;
+    justify-content: end;
 }
 
 .page-header small {
@@ -291,14 +318,18 @@ main {
 
 
 
-.export-bar {
+.table-filter {
     padding: 1rem 0;
     border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: .8rem;
+    align-items: center;
 }
 
-.export-bar input,
-.export-bar select,
-.export-bar button {
+.table-filter input,
+.table-filter select,
+.table-filter button {
     margin-right: 2rem;
     margin-left: .2rem;
 }
@@ -338,8 +369,8 @@ table th {
     color: var(--link);
 }
 
-.export-bar input,
-.export-bar select,
+.table-filter input,
+.table-filter select,
 .search-bar input {
     padding: .4rem .6rem;
     border-radius: 4px;
@@ -347,7 +378,7 @@ table th {
     outline: none;
 }
 
-.export-bar select {
+.table-filter select {
     cursor: pointer;
 }
 
