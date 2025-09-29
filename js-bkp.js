@@ -46,15 +46,8 @@ document
     const searchSectorGroup = tabContent.querySelector(".searchSectorGroup");
     const searchSupplierType = tabContent.querySelector(".searchSupplierType");
     const searchCategoryName = tabContent.querySelector(".searchCategoryName");
-    const searchCategoryType = tabContent.querySelector(".searchCategoryType");
-    const searchMealPlan = tabContent.querySelector(".searchMealPlan");
-
     const searchHotels = tabContent.querySelector(".searchHotels");
     const searchHotelsGroup = tabContent.querySelector(".searchHotelsGroup");
-    const searchAgentName = tabContent.querySelector(".searchAgentName");
-    const searchRoomClassName = tabContent.querySelector(
-      ".searchRoomClassName"
-    );
 
     // New filters
     const fromCurrencySelect = tabContent.querySelector("#fromCurrency");
@@ -97,10 +90,6 @@ document
       const categoryValue = searchCategoryName?.value.toLowerCase() || "";
       const hotelsValue = searchHotels?.value.toLowerCase() || "";
       const hotelsGroupValue = searchHotelsGroup?.value.toLowerCase() || "";
-      const agentNameValue = searchAgentName?.value.toLowerCase() || "";
-      const roomClassValue = searchRoomClassName?.value.toLowerCase() || "";
-      const categoryTypeValue = searchCategoryType?.value.toLowerCase() || "";
-      const mealPlanValue = searchMealPlan?.value.toLowerCase() || "";
 
       const dateFrom = parseDate(dateFromInput?.value);
       const dateTo = parseDate(dateToInput?.value);
@@ -115,23 +104,18 @@ document
         const rowCountry = getCellByHeader(row, "country name");
         const rowCurrencyCode = getCellByHeader(row, "currency code");
         const rowCurrencyName = getCellByHeader(row, "currency name");
-
         const rowSectorName = getCellByHeader(row, "sector name");
         const rowSectorGroup = getCellByHeader(row, "sector group name");
-        const rowCity = getCellByHeader(row, "city");
+        const rowCity = getCellByHeader(row, "city name");
         const rowProvider = getCellByHeader(row, "country provider");
         const rowSupplierType = getCellByHeader(row, "supplier type name");
-        const rowCategoryName = getCellByHeader(row, "category");
-        const rowCategoryType = getCellByHeader(row, "category type");
-        const rowMealPlan = getCellByHeader(row, "meal plan");
-
+        const rowCategoryName = getCellByHeader(row, "category name");
         const rowHotels = getCellByHeader(row, "hotel name");
         const rowHotelsGroup = getCellByHeader(row, "hotel chain");
-        const rowAgentName = getCellByHeader(row, "agent name");
+
         const rowCountryGroup = getCellByHeader(row, "country group");
         const rowText = row.innerText.toLowerCase();
         const rowDate = parseDate(getCellByHeader(row, "date created"));
-        const rowRoomClassName = getCellByHeader(row, "room class name");
 
         // For new table (Currencies Conversion Rate)
         const rowFromCurrency = getCellByHeader(row, "from currency");
@@ -156,12 +140,8 @@ document
           (!categoryValue || rowCategoryName.includes(categoryValue)) &&
           (!sectorGroupValue || rowSectorGroup.includes(sectorGroupValue)) &&
           (!supplierTypeValue || rowSupplierType.includes(supplierTypeValue)) &&
-          (!agentNameValue || rowAgentName.includes(agentNameValue)) &&
           (!hotelsValue || rowHotels.includes(hotelsValue)) && // 👈 added
           (!hotelsGroupValue || rowHotelsGroup.includes(hotelsGroupValue)) &&
-          (!roomClassValue || rowRoomClassName.includes(roomClassValue)) &&
-          (!categoryTypeValue || rowCategoryType.includes(categoryTypeValue)) &&
-          (!mealPlanValue || rowMealPlan.includes(mealPlanValue)) &&
           (!toCurrency || rowToCurrency.includes(toCurrency));
 
         if (match && dateFrom) match = rowDate >= dateFrom;
@@ -187,11 +167,7 @@ document
       searchCountryGroup, // 👈 added
       fromCurrencySelect,
       searchCategoryName,
-      searchRoomClassName,
-      searchAgentName,
-      searchCategoryType,
       searchHotels, // 👈 added
-      searchMealPlan,
       searchHotelsGroup,
       toCurrencySelect,
     ].forEach((input) => {
@@ -211,7 +187,6 @@ document
           searchCountry,
           searchCurrency,
           searchProvider,
-          searchAgentName,
           searchText,
           searchSectorName,
           searchSupplierType, // 👈 added
@@ -220,9 +195,6 @@ document
           fromCurrencySelect,
           searchHotels, // 👈 added
           searchHotelsGroup,
-          searchCategoryType,
-          searchMealPlan,
-          searchRoomClassName,
           searchCategoryName,
           toCurrencySelect,
         ].forEach((input) => {

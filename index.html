@@ -45,11 +45,22 @@
                 <ul class="submenu">
                     <li data-tab="sup-sector">Sector</li>
                     <li data-tab="sup-type">Supplier Type</li>
-                    <li data-tab="sup-cat">Supplier Categories</li>
+                    <li data-tab="sup-cat">Supplier Categories - Search</li>
                     <li data-tab="sup-hotelchain">Hotel Chain</li>
                     <li data-tab="sup-agent">Supplier Agent</li>
                     <li data-tab="sup-room">Room Classification</li>
+                    <li data-tab="sup-exhibition">Exhibition</li>
+                    <li data-tab="sup-accommodation">Accommodation Category</li>
+                    <li data-tab="sup-supplement">Supplement Category</li>
+                    <li data-tab="sup-meal">Meal Plan Search</li>
+                    <li data-tab="sup-amenities">Amenities</li>
+                    <li data-tab="sup-status">Hotel Status</li>
+                    <li data-tab="sup-property">Property Type Search</li>
+                    <li data-tab="sup-commission">Commission Search</li>
+                    <li data-tab="sup-markup">Markup Formula Search</li>
+                    <li data-tab="sup-sectorgroup">Sector Group</li>
                 </ul>
+
             </li>
             <li data-tab="products"><a href="#">Products</a>
                 <ul class="submenu">
@@ -1034,18 +1045,2747 @@
                 </div>
             </div>
             <!-- General → Cities Search -->
-            <div id="general-cities" class="tab-content">General → Cities Search</div>
-            <!-- General → Country Group -->
-            <div id="general-countrygroup" class="tab-content">General → Country Group</div>
+            <div id="general-cities" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>General → Cities Search</small>
+                        <h3>Cities List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
 
-            <!-- Suppliers -->
-            <div id="suppliers" class="tab-content">Select a submenu in <b>Suppliers</b></div>
-            <div id="sup-sector" class="tab-content">Suppliers → Sector Content</div>
-            <div id="sup-type" class="tab-content">Suppliers → Supplier Type Content</div>
-            <div id="sup-cat" class="tab-content">Suppliers → Supplier Categories Content</div>
-            <div id="sup-hotelchain" class="tab-content">Suppliers → Hotel Chain Content</div>
-            <div id="sup-agent" class="tab-content">Suppliers → Supplier Agent Content</div>
-            <div id="sup-room" class="tab-content">Suppliers → Room Classification Content</div>
+                    </div>
+
+
+                    <div class="search-bar">
+
+                        <div class="search-wrap">
+                            <input class="searchCountry" type="search" placeholder="Country">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCity" type="search" placeholder="City Name">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>City Code</th>
+                                <th>City Name</th>
+                                <th>Country Name</th>
+                                <th>Rank Order</th>
+                                <th>Show in Web</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0001</td>
+                                <td>COSTA ADEJE</td>
+                                <td>Spain</td>
+                                <td>923</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>13/04/2021 19:05:02</td>
+                                <td>admin</td>
+                                <td>15/08/2021 17:12:09</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>Kangra</td>
+                                <td>India</td>
+                                <td>910</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/07/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>015646</td>
+                                <td>Baghdad</td>
+                                <td>Iraq</td>
+                                <td>920</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/07/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1007311</td>
+                                <td>DURBAN</td>
+                                <td>South Africa</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1007500</td>
+                                <td>COLOMBO</td>
+                                <td>Sri Lanka</td>
+                                <td>909</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>10097360</td>
+                                <td>Pristina</td>
+                                <td>Kosovo</td>
+                                <td>906</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1023656</td>
+                                <td>Adelaide</td>
+                                <td>South Africa</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>19/02/2021 12:04:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>105343</td>
+                                <td>Jeddah</td>
+                                <td>Saudi Arabia</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>107797</td>
+                                <td>Dhahran</td>
+                                <td>Saudi Arabia</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>108410</td>
+                                <td>Riyadh</td>
+                                <td>Saudi Arabia</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>109323</td>
+                                <td>Khobar</td>
+                                <td>Saudi Arabia</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>109345</td>
+                                <td>AL JUBAYL</td>
+                                <td>Saudi Arabia</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>10972293</td>
+                                <td>Medina</td>
+                                <td>Saudi Arabia</td>
+                                <td>905</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>11004747</td>
+                                <td>Kilimanjaro</td>
+                                <td>Tanzania</td>
+                                <td>109</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>19/02/2021 12:04:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>110336</td>
+                                <td>Dammam</td>
+                                <td>Saudi Arabia</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>112931</td>
+                                <td>TEHRAN</td>
+                                <td>Iran</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1151254</td>
+                                <td>Phuket</td>
+                                <td>Thailand</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1169281</td>
+                                <td>Multan</td>
+                                <td>Pakistan</td>
+                                <td>102</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1172451</td>
+                                <td>LAHORE</td>
+                                <td>Pakistan</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1174872</td>
+                                <td>KARACHI</td>
+                                <td>Pakistan</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>19/02/2021 12:04:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+            <!-- General → Country Group -->
+            <div id="general-countrygroup" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>General → Country Group</small>
+                        <h3>Country Group</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">New</button>
+                            <button class="btn-s red-s">Edit</button>
+                            <button class="btn-s red-s">Delete</button>
+                            <button class="btn-s red-s">View</button>
+                            <button class="btn-s red-s">cancel</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCountryGroup" type="search" placeholder="Country Group">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchRegion" type="search" placeholder="Region">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCountry" type="search" placeholder="Country">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Country Code</th>
+                                <th>Country Name</th>
+                                <th>Region</th>
+                                <th>Country Group</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AF</td>
+                                <td>Afghanistan</td>
+                                <td>Asia</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, All Markets Exc GCC&ME, All
+                                    Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AX</td>
+                                <td>Åland</td>
+                                <td>Europe</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, European Market, All Markets Exc
+                                    GCC&ME, All Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AL</td>
+                                <td>Albania</td>
+                                <td>Europe</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, European Market, All Markets Exc
+                                    GCC&ME, All Markets</td>
+                            </tr>
+                            <tr>
+                                <td>DZ</td>
+                                <td>Algeria</td>
+                                <td>Africa</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, GCC exc Qatar, GCC&ME, All
+                                    Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AS</td>
+                                <td>American Samoa</td>
+                                <td>Oceania</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, All Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AD</td>
+                                <td>Andorra</td>
+                                <td>Europe</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, European Market, All Markets Exc
+                                    GCC&ME, All Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AO</td>
+                                <td>Angola</td>
+                                <td>Africa</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, All Markets Exc GCC&ME, All
+                                    Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AI</td>
+                                <td>Anguilla</td>
+                                <td>North America</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, All Markets Exc GCC&ME, All
+                                    Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AQ</td>
+                                <td>Antarctica</td>
+                                <td>Antarctica</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, All Markets Exc GCC&ME, All
+                                    Markets</td>
+                            </tr>
+                            <tr>
+                                <td>AG</td>
+                                <td>Antigua and Barbuda</td>
+                                <td>North America</td>
+                                <td>All Market exc QATAR, All market exc Qatar & Italy, All Markets Exc GCC&ME, All
+                                    Markets</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <!-- Suppliers Tab Contents -->
+            <div id="suppliers" class="tab-content">Select a submenu in <b>Suppliers</b>
+
+
+            </div>
+            <!-- Suppliers → Sector  -->
+            <div id="sup-sector" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Sector </small>
+                        <h3>Sector List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCountry" type="search" placeholder="Country">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCity" type="search" placeholder="City">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchSectorName" type="search" placeholder="Sector">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchSectorGroup" type="search" placeholder="Sector Group">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Sector Code</th>
+                                <th>Sector Name</th>
+                                <th>Sector Group Name</th>
+                                <th>City Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>000016</td>
+                                <td>Qatar Olympic</td>
+                                <td>And</td>
+                                <td>Doha</td>
+                                <td>Active</td>
+                                <td>18/08/2023 11:06:15 AM</td>
+                                <td>admin</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>000006</td>
+                                <td>Sports Museum</td>
+                                <td>Abu Samar</td>
+                                <td>Abu samar</td>
+                                <td>Active</td>
+                                <td>10/07/2023 09:55:47 AM</td>
+                                <td>admin</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>000018</td>
+                                <td>Ahli Stadium</td>
+                                <td>ΑΙ</td>
+                                <td>Doha</td>
+                                <td>Active</td>
+                                <td>18/08/2023 11:06:15 AM</td>
+                                <td>admin</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>000031</td>
+                                <td>Bidda Park</td>
+                                <td>ΑΙ</td>
+                                <td>Doha</td>
+                                <td>Active</td>
+                                <td>18/08/2023 11:06:15 AM</td>
+                                <td>admin</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>000027</td>
+                                <td>Koot Fort</td>
+                                <td>ΑΙ</td>
+                                <td>Doha</td>
+                                <td>Active</td>
+                                <td>18/08/2023 11:06:15 AM</td>
+                                <td>admin</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>000003</td>
+                                <td>Al Ruwais Fort</td>
+                                <td>Al Ruwais</td>
+                                <td>Al Ruwais</td>
+                                <td>Active</td>
+                                <td>02/07/2023 12:16:07 PM</td>
+                                <td>admin</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- Suppliers → Supplier Type -->
+            <div id="sup-type" class="tab-content">
+
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Supplier Type</small>
+                        <h3>Supplier Type List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchSupplierType" type="search" placeholder="Supplier Type">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Supplier Type</th>
+                                <th>Supplier Type Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AGT</td>
+                                <td>Supplier Agent</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Meet</td>
+                                <td>ALMH</td>
+                                <td>Active</td>
+                                <td>06/07/2023 13:46:07</td>
+                                <td>naveena</td>
+                                <td>10/09/2023 12:20:55</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Assist</td>
+                                <td>EXC</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>08/10/2023 18:17:17</td>
+                                <td>Ranjit</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Services</td>
+                                <td>TRFS</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>01/07/2023 20:19:51</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>VISA</td>
+                                <td>VISA</td>
+                                <td>InActive</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- Suppliers → Supplier Categories -->
+            <div id="sup-cat" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Supplier Categories</small>
+                        <h3>Supplier Categories List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category Name">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Category Code</th>
+                                <th>Category Name</th>
+                                <th>Supplier Type Name</th>
+                                <th>Rank Order</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SUPAGT</td>
+                                <td>Supplier Agent</td>
+                                <td>Supplier Agent</td>
+                                <td>13</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>1* CITY</td>
+                                <td>1* City</td>
+                                <td>Hotels/Apartments</td>
+                                <td>1</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>07/08/2023 15:46:16</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>2* CITY</td>
+                                <td>2* City</td>
+                                <td>Hotels/Apartments</td>
+                                <td>2</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:41:29</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>3* BEACH</td>
+                                <td>3* Beach</td>
+                                <td>Hotels/Apartments</td>
+                                <td>4</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:41:36</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>3* CITY</td>
+                                <td>3* City</td>
+                                <td>Hotels/Apartments</td>
+                                <td>3</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:41:43</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>4* BEACH</td>
+                                <td>4* Beach</td>
+                                <td>Hotels/Apartments</td>
+                                <td>6</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:42:24</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>4* CITY</td>
+                                <td>4* City</td>
+                                <td>Hotels/Apartments</td>
+                                <td>5</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:42:32</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>5* BEACH</td>
+                                <td>5* Beach</td>
+                                <td>Hotels/Apartments</td>
+                                <td>8</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:42:42</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>5* CITY</td>
+                                <td>5* City</td>
+                                <td>Hotels/Apartments</td>
+                                <td>7</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:42:49</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- Suppliers → Hotel Chain -->
+            <div id="sup-hotelchain" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Hotel Chain </small>
+                        <h3>Hotel Chain</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">New</button>
+                            <button class="btn-s red-s">Edit</button>
+                            <button class="btn-s red-s">Delete</button>
+                            <button class="btn-s red-s">View</button>
+                            <button class="btn-s red-s">Cancel</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchHotels" type="search" placeholder="Hotels">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCity" type="search" placeholder="City">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchSectorName" type="search" placeholder="Sector">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchHotelsGroup" type="search" placeholder="Hotels Chain">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Hotel Code</th>
+                                <th>Hotel Name</th>
+                                <th>Category</th>
+                                <th>City</th>
+                                <th>Sector Name</th>
+                                <th>Hotel Chain</th>
+                                <th>Telephone</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>000094</td>
+                                <td>Abeng Doha Hotel &amp; Residences</td>
+                                <td>5* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td>IMG</td>
+                                <td>+974 44923333</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>000106</td>
+                                <td>Adaqjo Doha</td>
+                                <td>4* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td>+97444885555</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>000002</td>
+                                <td>Agora, Doha, Autograph Collection</td>
+                                <td>5* City</td>
+                                <td>Lusail</td>
+                                <td>Lusail</td>
+                                <td>Marriott</td>
+                                <td>+974 4422 3060</td>
+                                <td>Samsudin Babu</td>
+                            </tr>
+                            <tr>
+                                <td>000080</td>
+                                <td>Al Aziziyah Boutique Hotel</td>
+                                <td>5* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td>4445 5555</td>
+                                <td>Dina Sherif</td>
+                            </tr>
+                            <tr>
+                                <td>000003</td>
+                                <td>AL MANSOUR PLAZA</td>
+                                <td>4* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td>GOLD BAY HOTELS</td>
+                                <td>40312898</td>
+                                <td>Hanani</td>
+                            </tr>
+                            <tr>
+                                <td>000004</td>
+                                <td>Al Messila, A Luxury Collection Resort and Spa Doha</td>
+                                <td>5* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td>Marriott International</td>
+                                <td>974 44550000</td>
+                                <td>Ketevan Turkadze</td>
+                            </tr>
+                            <tr>
+                                <td>000005</td>
+                                <td>Al Najada Hotel by Tivoli</td>
+                                <td>5* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td>Minor Hotel Group</td>
+                                <td>974 4470 4714</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>000091</td>
+                                <td>Al Samriya, Autograph Collection</td>
+                                <td>5* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td>+974 4429 3050</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>000057</td>
+                                <td>Al Sultan Beach Resort</td>
+                                <td>5* Beach</td>
+                                <td>Al Khor</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td>40417101</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>000083</td>
+                                <td>Aleph Doha Residences Curio Collection by Hilton</td>
+                                <td>5* City</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td>+974 400 76 191</td>
+                                <td>Ramona DeCosta</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <!-- Suppliers → Supplier Agent -->
+            <div id="sup-agent" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Supplier Agent</small>
+                        <h3>Suppliers → Supplier Agen List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input type="text" class="searchAgentName" placeholder="Agent Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>S. Agent Code</th>
+                                <th>S. Agent Name</th>
+                                <th>Supplier Type Code</th>
+                                <th>Category Code</th>
+                                <th>Currency</th>
+                                <th>Active</th>
+                                <th>Telephone</th>
+                                <th>Fax</th>
+                                <th>Credit Days</th>
+                                <th>Credit Limit</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DEFAULT</td>
+                                <td>Tarfreq Holidays</td>
+                                <td>AGT</td>
+                                <td>SUPAGT</td>
+                                <td>AED</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>19/07/2020<br>13:00:58</td>
+                                <td>admin</td>
+                                <td>06/12/2021<br>15:51:56</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>TEST</td>
+                                <td>TEST AGENT</td>
+                                <td>AGT</td>
+                                <td>SUPAGT</td>
+                                <td>QAR</td>
+                                <td>Active</td>
+                                <td>8732984</td>
+                                <td>4324</td>
+                                <td></td>
+                                <td></td>
+                                <td>01/02/2024<br>10:22:43</td>
+                                <td>naveena</td>
+                                <td>01/02/2024<br>10:23:11</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <!-- Suppliers → Room Classification -->
+            <div id="sup-room" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Room Classification</small>
+                        <h3>Room Classification List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input type="text" class="searchRoomClassName" placeholder="Room Class Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Room Class Code</th>
+                                <th>Room Class Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>002334</td>
+                                <td>01 Bedroom Apartment</td>
+                                <td>Active</td>
+                                <td>05/09/2024 17:37:54</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002345</td>
+                                <td>02 Bedroom Apartment</td>
+                                <td>Active</td>
+                                <td>06/10/2024 12:18:56</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002347</td>
+                                <td>03 Bedroom Apartment</td>
+                                <td>Active</td>
+                                <td>06/10/2024 12:17:56</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002335</td>
+                                <td>1 Bedroom City View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:18:18</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002338</td>
+                                <td>1 Bedroom Sea View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:22:12</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002341</td>
+                                <td>1 Bedroom Penthouse View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:22:58</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002336</td>
+                                <td>1 Bedroom-City View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:18:35</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002337</td>
+                                <td>1 Bedroom-Tower View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:21:56</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002340</td>
+                                <td>1 BR Villa with Outdoor pool</td>
+                                <td>Active</td>
+                                <td>06/09/2024 13:48:27</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002339</td>
+                                <td>2 Bedrooms Sea View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:22:32</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002341</td>
+                                <td>2 BR Villa with Outdoor pool</td>
+                                <td>Active</td>
+                                <td>06/09/2024 13:49:00</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002342</td>
+                                <td>2 Bedrooms City View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:22:47</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002342</td>
+                                <td>2 Bedrooms-Panoramic View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:23:09</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002343</td>
+                                <td>3 Bedrooms-Penthouse View</td>
+                                <td>Active</td>
+                                <td>21/11/2023 16:23:19</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002342</td>
+                                <td>BR Villa with Outdoor pool</td>
+                                <td>Active</td>
+                                <td>06/09/2024 13:49:35</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002343</td>
+                                <td>BR Villa with Outdoor pool</td>
+                                <td>Active</td>
+                                <td>06/09/2024 13:49:53</td>
+                                <td>Naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002247</td>
+                                <td>ROYAL ONE BEDROOM SUITE</td>
+                                <td>Active</td>
+                                <td>30/11/2023 10:25:07</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002223</td>
+                                <td>Anood Villa</td>
+                                <td>Active</td>
+                                <td>19/11/2023 18:12:09</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002192</td>
+                                <td>Al Emari Family Suite with Private pool, 2 bedroom</td>
+                                <td>Active</td>
+                                <td>19/10/2023 12:32:01</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>002222</td>
+                                <td>Al Ezz Suite</td>
+                                <td>Active</td>
+                                <td>19/11/2023 18:11:18</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <div id="sup-exhibition" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Exhibition</small>
+                        <h3>Exhibition Master List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input type="text" class="searchExhibitionName" placeholder="Exhibition Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <p class="not-found">Records Not Found</p>
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div id="sup-accommodation" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Accommodation Category</small>
+                        <h3>Accommodation Category List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchCategoryType" type="search" placeholder="Category type">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Room Category Code</th>
+                                <th>Room Category Name</th>
+                                <th>Print Name</th>
+                                <th>Category Type</th>
+                                <th>Display Order</th>
+                                <th>Meal Plan</th>
+                                <th>Allotment Req.</th>
+                                <th>Active</th>
+                                <th>Show In Web</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5 PAX</td>
+                                <td>5 PAX</td>
+                                <td>5 PAX</td>
+                                <td>Adult Accommodation</td>
+                                <td>160</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>19/11/2023 10:19:00</td>
+                                <td>naveena</td>
+                                <td>19/11/2023 10:35:20</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>6 PAX</td>
+                                <td>6 PAX</td>
+                                <td>6PAX</td>
+                                <td>Adult Accommodation</td>
+                                <td>161</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>19/11/2023 10:22:02</td>
+                                <td>naveena</td>
+                                <td>19/11/2023 10:35:20</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Adult EB</td>
+                                <td>Adult Extra Bed</td>
+                                <td>Adult Extra Bed</td>
+                                <td>Adult Accommodation</td>
+                                <td>6</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>Adult Extra Bed</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>01/07/2023 20:35:04</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Child EB</td>
+                                <td>Child Extra Bed</td>
+                                <td>Child Extra Bed</td>
+                                <td>Child Accommodation</td>
+                                <td>6</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>CHILD EB</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>01/07/2023 20:37:05</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>DBL</td>
+                                <td>Double</td>
+                                <td>Double</td>
+                                <td>Adult Accommodation</td>
+                                <td>2</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>DOUBLE</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:48:13</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>EXTRA PAX</td>
+                                <td>Extra Person</td>
+                                <td>Extra Person</td>
+                                <td>Adult Accommodation</td>
+                                <td>131</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>Extra Person</td>
+                                <td>17/07/2023 10:42:09</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>QUAD</td>
+                                <td>Quad</td>
+                                <td>Quad</td>
+                                <td>Adult Accommodation</td>
+                                <td>5</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>4 Persons</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:46:53</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>RO DBL</td>
+                                <td>Room Only DBL</td>
+                                <td>Room Only DBL</td>
+                                <td>Adult Accommodation</td>
+                                <td>156</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>03/10/2023 11:12:38</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>RO SGL</td>
+                                <td>Room Only SGL</td>
+                                <td>Room Only SGL</td>
+                                <td>Adult Accommodation</td>
+                                <td>157</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>03/10/2023 11:13:23</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Room Only</td>
+                                <td>Room Only</td>
+                                <td>Room Only</td>
+                                <td>Adult Accommodation</td>
+                                <td>140</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>18/09/2023 09:54:44</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>SGL</td>
+                                <td>Single</td>
+                                <td>SINGLE</td>
+                                <td>Adult Accommodation</td>
+                                <td>1</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>SINGLE</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>TPL</td>
+                                <td>Triple</td>
+                                <td>TRIPLE</td>
+                                <td>Adult Accommodation</td>
+                                <td>3</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>TRIPLE</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>UNIT</td>
+                                <td>Unit</td>
+                                <td>Unit</td>
+                                <td>Adult Accommodation</td>
+                                <td>4</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Active</td>
+                                <td>UNIT</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <div id="sup-supplement" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Supplement Category</small>
+                        <h3>Supplement Category List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchCategoryType" type="search" placeholder="Category type">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchMealPlan" type="search" placeholder="Meal Type">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Rate Code</th>
+                                <th>Room Category name</th>
+                                <th>Print Name</th>
+                                <th>Category Type</th>
+                                <th>Display Order</th>
+                                <th>Meal Plan</th>
+                                <th>Allotment Req.</th>
+                                <th>Active</th>
+                                <th>Show In Web</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ADT ALL INC</td>
+                                <td>Adult All Inclusive</td>
+                                <td>All Inclusive</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>152</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>Ultra All Inclusive Board is based on the main All-day dining restaurant Breakfast,
+                                    Lunch and Dinner</td>
+                                <td>22/09/2023 18:18:57</td>
+                                <td>naveena</td>
+                                <td>22/09/2023 18:21:58</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ADT ULT ALL INC</td>
+                                <td>Adult Ultra All Inclusive</td>
+                                <td>Ultra All Inclusive</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>153</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>Ultra All Inclusive Board is based on the main All-day dining restaurant Breakfast,
+                                    Lunch and Dinner</td>
+                                <td>22/09/2023 18:18:57</td>
+                                <td>naveena</td>
+                                <td>22/09/2023 18:21:58</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ADULT BF</td>
+                                <td>Adult Breakfast</td>
+                                <td>Adult Breakfast</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>1</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>ADULT BF</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>11/12/2023 18:57:13</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ADULT FB</td>
+                                <td>Adult Full Board</td>
+                                <td>Adult Full Board</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>3</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>ADULT FB</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>18/02/2021 15:17:49</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>ADULTHB</td>
+                                <td>Adult Half Board</td>
+                                <td>Adult Half Board</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>2</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>ADULT HB</td>
+                                <td>24/02/2021 16:30:49</td>
+                                <td>admin</td>
+                                <td>01/07/2023 20:37:38</td>
+                                <td>admin</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHD ALL INC</td>
+                                <td>Child All Inclusive</td>
+                                <td>Child All Inclusive</td>
+                                <td>Child Meal Supplements</td>
+                                <td>153</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>22/09/2023 18:12:05</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHD NY GALA DIN</td>
+                                <td>Child New Year Gala Dinner</td>
+                                <td>Child New Year Gala Dinner</td>
+                                <td>Child Meal Supplements</td>
+                                <td>155</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>22/09/2023 18:25:52</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHD ULTRA ALL INC</td>
+                                <td>Child Ultra All Inclusive</td>
+                                <td>Child Ultra All Inclusive</td>
+                                <td>Child Meal Supplements</td>
+                                <td>153</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>Ultra All Inclusive Board is based on the main All-day dining restaurant Breakfast,
+                                    Lunch and Dinner</td>
+                                <td>22/09/2023 18:22:03</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHILD BREAKFAST</td>
+                                <td>CHILD BREAKFAST</td>
+                                <td>Child Breakfast</td>
+                                <td>Child Meal Supplements</td>
+                                <td>141</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>18/09/2023 14:41:24</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHILD DIN</td>
+                                <td>CHILD DIN</td>
+                                <td>CH DIN</td>
+                                <td>Child Meal Supplements</td>
+                                <td>8</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>CHILD DIN</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>13/09/2023 17:34:50</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHILD FB</td>
+                                <td>CHILD FB</td>
+                                <td>Full Board</td>
+                                <td>Child Meal Supplements</td>
+                                <td>6</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>CHILD FULL</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>17/09/2023 12:29:52</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHILD HB</td>
+                                <td>CHILD HB</td>
+                                <td>Child HB</td>
+                                <td>Child Meal Supplements</td>
+                                <td>127</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>24/02/2021 16:30:49</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHILD LUN</td>
+                                <td>CHILD LUNCH</td>
+                                <td>CH LUN</td>
+                                <td>Child Meal Supplements</td>
+                                <td>4</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>CHILD LUN</td>
+                                <td>18/02/2021 12:14:32</td>
+                                <td>admin</td>
+                                <td>17/09/2023 14:14:00</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHRISTMAS MEAL FB</td>
+                                <td>CHRISTMAS MEAL FB</td>
+                                <td>CHRISTMAS MEAL FB</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>143</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>26/09/2023 16:18:17</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHRISTMAS MEAL HB</td>
+                                <td>CHRISTMAS MEAL HB</td>
+                                <td>CHRISTMAS MEAL HB</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>142</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>26/09/2023 16:15:37</td>
+                                <td>naveena</td>
+                                <td>26/09/2023 16:16:43</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHRISTMAS MEAL FB CHD</td>
+                                <td>CHRISTMAS MEAL FB CHD</td>
+                                <td>CHRISTMAS MEAL FB CHD</td>
+                                <td>Child Meal Supplements</td>
+                                <td>144</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>26/09/2023 16:19:14</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>CHRISTMAS MEAL HB CHD</td>
+                                <td>CHRISTMAS MEAL HB CHD</td>
+                                <td>CHRISTMAS MEAL HB CHD</td>
+                                <td>Child Meal Supplements</td>
+                                <td>145</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>26/09/2023 16:19:57</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>DINNER</td>
+                                <td>DINNER</td>
+                                <td>DINNER</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>137</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td></td>
+                                <td>18/09/2023 17:55:42</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Enhance Meal</td>
+                                <td>Enhance Meal</td>
+                                <td>Enhance Meal</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>139</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>Inclusive of 2 glasses of house wine or beer</td>
+                                <td>18/09/2023 09:41:30</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Enhance Meal HB</td>
+                                <td>Enhance Meal HB</td>
+                                <td>Enhance Meal HB</td>
+                                <td>Adult Meal Supplements</td>
+                                <td>138</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                                <td>Active</td>
+                                <td>Inclusive of 2 glasses of house wine or beer</td>
+                                <td>18/09/2023 09:39:40</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <div id="sup-meal" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Suppliers → Meal Plan Search</small>
+                        <h3>Meal Plans List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+
+
+                        <div class="search-wrap">
+                            <input class="searchMealPlan" type="search" placeholder="Meal Plan Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Meal Plan Code</th>
+                                <th>Meal Plan Name</th>
+                                <th>Active</th>
+                                <th>Rank Order</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ALLINCL</td>
+                                <td>ALL INCLUSIVE</td>
+                                <td>Active</td>
+                                <td>7</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>01/07/2023 09:06:07 PM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>BB</td>
+                                <td>Bed and Breakfast</td>
+                                <td>Active</td>
+                                <td>2</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>16/12/2021 11:59:38 AM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Enhance Meal</td>
+                                <td>Enhance Meal HB/FB</td>
+                                <td>Active</td>
+                                <td>8</td>
+                                <td>11/09/2023 11:28:03 AM</td>
+                                <td>naveena</td>
+                                <td>11/09/2023 12:12:48 PM</td>
+                                <td>naveena</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Enhance Meal FB</td>
+                                <td>Enhance Meal FB</td>
+                                <td>Active</td>
+                                <td>2</td>
+                                <td>11/09/2023 01:03:42 PM</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Enhance Meal HB</td>
+                                <td>Enhance Meal HB</td>
+                                <td>Active</td>
+                                <td>1</td>
+                                <td>11/09/2023 01:03:19 PM</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Extra bed FB</td>
+                                <td>Extra bed FB</td>
+                                <td>Active</td>
+                                <td>3</td>
+                                <td>12/09/2023 11:06:11 AM</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>FB</td>
+                                <td>Breakfast + Lunch + Dinner</td>
+                                <td>Active</td>
+                                <td>4</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>01/07/2023 09:05:37 PM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>HB</td>
+                                <td>Breakfast + Lunch/Dinner</td>
+                                <td>Active</td>
+                                <td>3</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>16/12/2021 12:00:03 PM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>HB DBL</td>
+                                <td>Half Board DBL</td>
+                                <td>Active</td>
+                                <td>11</td>
+                                <td>03/10/2024 04:50:02 PM</td>
+                                <td>Neveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>HB SGL</td>
+                                <td>Half Board SGL</td>
+                                <td>Active</td>
+                                <td>10</td>
+                                <td>03/10/2024 04:49:21 PM</td>
+                                <td>Neveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>HB-(D)</td>
+                                <td>Half Board Dinner</td>
+                                <td>Active</td>
+                                <td>6</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>01/07/2023 09:05:58 PM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>HB-(L)</td>
+                                <td>Half Board Lunch</td>
+                                <td>Active</td>
+                                <td>5</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>01/07/2023 09:05:51 PM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>RO</td>
+                                <td>Room Only</td>
+                                <td>Active</td>
+                                <td>1</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>16/12/2021 12:02:04 PM</td>
+                                <td>admin</td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>RO DBL</td>
+                                <td>Room Only DBL</td>
+                                <td>Active</td>
+                                <td>1</td>
+                                <td>03/10/2023 11:07:39 AM</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>RO SGL</td>
+                                <td>Room Only SGL</td>
+                                <td>Active</td>
+                                <td>1</td>
+                                <td>03/10/2023 11:07:21 AM</td>
+                                <td>naveena</td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">Edit</a></td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div id="sup-amenities" class="tab-content">Suppliers → Amenities</div>
+            <div id="sup-hotelstatus" class="tab-content">Suppliers → Hotel Status</div>
+            <div id="sup-propertytype" class="tab-content">Suppliers → Property Type Search</div>
+            <div id="sup-commission" class="tab-content">Suppliers → Commission Search</div>
+            <div id="sup-markup" class="tab-content">Suppliers → Markup Formula Search</div>
+            <div id="sup-sectorgroup" class="tab-content">Suppliers → Sector Group</div>
 
             <!-- Products -->
             <div id="products" class="tab-content">Select a submenu in <b>Products</b></div>
