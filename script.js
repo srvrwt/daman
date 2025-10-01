@@ -1,4 +1,3 @@
-// Tabber
 const tabs = document.querySelectorAll("#menuTabs li, .submenu li");
 const contents = document.querySelectorAll(".tab-content");
 
@@ -6,6 +5,7 @@ tabs.forEach((tab) => {
   tab.addEventListener("click", (e) => {
     e.stopPropagation();
     e.preventDefault();
+
     contents.forEach((c) => c.classList.remove("active"));
     tabs.forEach((t) => t.classList.remove("active"));
 
@@ -13,9 +13,29 @@ tabs.forEach((tab) => {
     document.getElementById(tab.dataset.tab).classList.add("active");
 
     let parentLi = tab.closest("#menuTabs > li");
-    if (parentLi) parentLi.classList.add("active");
+    if (parentLi) {
+      parentLi.classList.add("active");
+    }
+  });
+
+  tab.addEventListener("mouseover", () => {
+    tab.classList.add("show");
+  });
+
+  tab.addEventListener("mouseout", () => {
+    tab.classList.remove("show");
   });
 });
+
+document.querySelectorAll(".submenu li").forEach((subTab) => {
+  subTab.addEventListener("click", () => {
+    const parentLi = subTab.closest("#menuTabs > li.show");
+    if (parentLi) {
+      parentLi.classList.remove("show");
+    }
+  });
+});
+
 // Table Search, Filter, Export
 document
   .querySelectorAll(".tab-content, .page-wrapper")
@@ -56,6 +76,11 @@ document
     const searchHotelGroup = tabContent.querySelector(".searchHotelGroup");
     const searchDependantID = tabContent.querySelector(".searchDependantID");
     const searchPromotionID = tabContent.querySelector(".searchPromotionID");
+    const searchGroupName = tabContent.querySelector(".searchGroupName");
+    const searchSupplierGroup = tabContent.querySelector(
+      ".searchSupplierGroup"
+    );
+
     const searchCancelPolicyNo = tabContent.querySelector(
       ".searchCancelPolicyNo"
     );
@@ -135,6 +160,9 @@ document
       const dependantIDValue = searchDependantID?.value.toLowerCase() || "";
       const promotionIDValue = searchPromotionID?.value.toLowerCase() || "";
       const promotionNameValue = searchPromotionName?.value.toLowerCase() || "";
+      const groupNameValue = searchGroupName?.value.toLowerCase() || "";
+      const supplierGroupValue = searchSupplierGroup?.value.toLowerCase() || "";
+
       const cancelPolicyNoValue =
         searchCancelPolicyNo?.value.toLowerCase() || "";
       const transferValue = searchTransfer?.value.toLowerCase() || "";
@@ -172,6 +200,8 @@ document
         const rowPropertyType = getCellByHeader(row, "property type name");
         const rowFormulaName = getCellByHeader(row, "formula name");
         const rowFormulaType = getCellByHeader(row, "formula type");
+        const rowGroupName = getCellByHeader(row, "group name");
+        const rowSupplierGroup = getCellByHeader(row, "supplier group");
 
         const rowHotels = getCellByHeader(row, "hotel name");
         const rowHotelsGroup = getCellByHeader(row, "hotel chain");
@@ -228,6 +258,9 @@ document
           (!mealPlanValue || rowMealPlan.includes(mealPlanValue)) &&
           (!amenityNameValue || rowAmenityName.includes(amenityNameValue)) &&
           (!amenityTypeValue || rowAmenityType.includes(amenityTypeValue)) &&
+          (!groupNameValue || rowGroupName.includes(groupNameValue)) &&
+          (!supplierGroupValue ||
+            rowSupplierGroup.includes(supplierGroupValue)) &&
           (!propertyTypeValue || rowPropertyType.includes(propertyTypeValue)) &&
           (!cancelPolicyNoValue ||
             rowCancelPolicyNo.includes(cancelPolicyNoValue)) &&
@@ -277,8 +310,10 @@ document
       searchTransfer,
       searchAirportService,
       searchOtherService,
+      searchGroupName,
       searchVisa,
       searchTour,
+      searchSupplierGroup,
 
       searchFormulaType,
       searchHotelGroup,
@@ -296,7 +331,7 @@ document
       searchPromotionID,
       searchPromotionName,
       searchApprovedStatus,
-
+      searchGroupName,
       searchHotels, // 👈 added
       searchMealPlan,
       searchHotelsGroup,
@@ -330,6 +365,7 @@ document
           searchOtherService,
           searchVisa,
           searchTour,
+          searchSupplierGroup,
 
           searchText,
           searchSectorName,

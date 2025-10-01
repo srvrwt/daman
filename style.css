@@ -183,10 +183,14 @@ main {
     background: var(--hover-bg);
 }
 
-.main-nav li:hover>.submenu {
+.main-nav li.show>.submenu {
     opacity: 1;
     visibility: visible;
     display: block;
+}
+
+.submenu li:hover {
+    background: #e4e4e485;
 }
 
 .tab-content-wrapper {
@@ -499,6 +503,7 @@ input[type="checkbox"] {
     accent-color: var(--black);
     width: 16px;
     height: 16px;
+    vertical-align: middle;
     cursor: pointer;
 }
 

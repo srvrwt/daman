@@ -76,6 +76,8 @@
                     <li data-tab="os-grouplist">Group List</li>
                     <li data-tab="os-types">Types</li>
                     <li data-tab="os-pricelist">Pricelist Search</li>
+                    <li data-tab="os-groups">Groups</li>
+                    <li data-tab="os-pricelist-search">Cost Pricelist Search</li>
                 </ul>
             </li>
             <li data-tab="customers"><a href="#">Customers</a>
@@ -5937,8 +5939,7 @@
                                 <td>08/09/2023 12:07:13 PM</td>
                                 <td>naveena</td>
                                 <td></td>
-                                <td></td>
-                            </tr>
+                                <td></td </tr>
                         </tbody>
                     </table>
 
@@ -5955,14 +5956,614 @@
 
             <!-- Other Services -->
             <div id="otherservices" class="tab-content">Select a submenu in <b>Other Services</b></div>
-            <div id="os-grouplist" class="tab-content">Other Services → Group List</div>
-            <div id="os-types" class="tab-content">Other Services → Types</div>
-            <div id="os-pricelist" class="tab-content">Other Services → Pricelist Search</div>
+            <div id="os-grouplist" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Other Services → Group List</small>
+                        <h3>Other Services Group List</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+
+
+                        <div class="search-wrap">
+                            <input type="text" class="searchGroupName" placeholder="Group Name">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Group Code</th>
+                                <th>Group Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AIRPORT</td>
+                                <td>Airport Misc Service</td>
+                                <td>Active</td>
+                                <td>17/08/2021 11:43:49 AM</td>
+                                <td>admin</td>
+                                <td>08/09/2023 11:10:09 AM</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Cancellation</td>
+                                <td>Cancellations Chargss</td>
+                                <td>Active</td>
+                                <td>16/08/2021 07:08:30 PM</td>
+                                <td>admin</td>
+                                <td>08/09/2023 11:12:26 AM</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>FLOWER</td>
+                                <td>Flowers</td>
+                                <td>Active</td>
+                                <td>18/02/2021 12:14:32 PM</td>
+                                <td>admin</td>
+                                <td>08/09/2023 11:12:06 AM</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+            <div id="os-types" class="tab-content">
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Other Services → Types</small>
+                        <h3>Other Services Types</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input type="text" class="searchType" placeholder="Type">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input type="text" class="searchGroupName" placeholder="Group">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input type="text" class="searchSupplier" placeholder="Supplier">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <p class="not-found">Records Not Found</p>
+
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+            <div id="os-pricelist" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Other Services → Pricelist Search</small>
+                        <h3>Other Services Pricelist Search</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input type="text" class="priceList" placeholder="Price List">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input type="text" class="servicesGroup" placeholder="Services Group">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input type="text" class="searchApprovedStatus" placeholder="Approved Status">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <p class="not-found">Records Not Found</p>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <div id="os-groups" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Other Services → Supplier Groups</small>
+                        <h3>Supplier Groups</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCountry" type="search" placeholder="Country">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchCity" type="search" placeholder="City">
+                        </div>
+                        <div class="search-wrap">
+                            <input class="searchSectorName" type="search" placeholder="Sector">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category">
+                        </div>
+                        <div class="search-wrap">
+
+                            <input type="text" class="searchSupplierGroup" placeholder="Supplier Group">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Supplier Code</th>
+                                <th>Supplier Name</th>
+                                <th>Category</th>
+                                <th>City</th>
+                                <th>Sector Name</th>
+                                <th>Supplier Group</th>
+                                <th>Telephone</th>
+                                <th>Contact</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>OTH-00002</td>
+                                <td>All Maka Services</td>
+                                <td>OTHER SERVICES</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td>4030 5831</td>
+                                <td>NA</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>OTH-00003</td>
+                                <td>Dallfreq Cancellation Charges</td>
+                                <td>OTHER SERVICES</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>OTH-00004</td>
+                                <td>Dallfeqq Holidays</td>
+                                <td>OTHER SERVICES</td>
+                                <td>Doha</td>
+                                <td>Doha</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <div id="os-pricelist-search" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Other Services → Pricelist Search</small>
+                        <h3>Other Services Cost Pricelist Search</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input type="text" class="priceList" placeholder="Price List">
+                        </div>
+                        <div class="search-wrap">
+                            <input type="text" class="searchSupplier" placeholder="Supplier">
+                        </div>
+                        <div class="search-wrap">
+                            <input type="text" class="servicesGroup" placeholder="Services Group">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input type="text" class="searchApprovedStatus" placeholder="Approved Status">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <p class="not-found">Records Not Found</p>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
 
             <!-- Customers -->
             <div id="customers" class="tab-content">Select a submenu in <b>Customers</b></div>
-            <div id="cust-categories" class="tab-content">Customers → Categories</div>
-            <div id="cust-sector" class="tab-content">Customers → Sector</div>
+            <div id="cust-categories" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Customers → Categories</small>
+                        <h3>Customers Categories</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category">
+                        </div>
+
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category Code</th>
+                                <th>Category Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>B2B</td>
+                                <td>B2B Agent</td>
+                                <td>Active</td>
+                                <td>10/09/2023 12:43:07</td>
+                                <td>naveena</td>
+                                <td>11/10/2023 12:09:39</td>
+                                <td>naveena</td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+                </div>
+            </div>
+            <div id="cust-sector" class="tab-content">
+
+                <div class="page-wrapper">
+                    <div class="page-header">
+                        <small>Customers → Sector</small>
+                        <h3>Customers Sector</h3>
+                        <div class="action-s">
+                            <button class="btn-s red-s">Add New</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="search-bar">
+                        <div class="search-wrap">
+                            <input class="searchSectorName" type="search" placeholder="Sector">
+                        </div>
+
+                        <div class="search-wrap">
+                            <input class="searchCategoryName" type="search" placeholder="Category">
+                        </div>
+
+
+                        <div class="search-wrap">
+                            <input class="searchText" type="search" placeholder="Text">
+                        </div>
+                        <button class="resetSearch btn-s black-s">Reset Search</button>
+                    </div>
+
+                    <div class="table-filter">
+                        <label>Filter By
+                            <select class="filterField">
+                                <option value="dateCreated">Created Date</option>
+                            </select>
+                        </label>
+                        From <input type="date" class="dateFrom">
+                        To <input type="date" class="dateTo">
+                        <button class="searchByDate btn-s black-s">Search by Date</button>
+                        <button class="resetDates btn-s black-s">Reset Dates</button>
+                        Rows Selected
+                        <select class="rowsPerPage">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="exportExcelBtn btn-s black-s">Export To Excel</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sector Code</th>
+                                <th>Sector Name</th>
+                                <th>Country Name</th>
+                                <th>Active</th>
+                                <th>Date Created</th>
+                                <th>User Created</th>
+                                <th>Date Modified</th>
+                                <th>User Modified</th>
+                                <th colspan="3">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GEN</td>
+                                <td>General</td>
+                                <td>Qatar</td>
+                                <td>Active</td>
+                                <td>31/05/2023 08:27:28 AM</td>
+                                <td>admin</td>
+                                <td></td>
+                                <td></td>
+                                <td class="action-links"><a href="#">Edit</a></td>
+                                <td class="action-links"><a href="#">View</a></td>
+                                <td class="action-links"><a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+                </div>
+            </div>
 
             <!-- Reports -->
             <div id="reports" class="tab-content">Select a submenu in <b>Reports</b></div>
