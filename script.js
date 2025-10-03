@@ -162,7 +162,6 @@ document
       const promotionNameValue = searchPromotionName?.value.toLowerCase() || "";
       const groupNameValue = searchGroupName?.value.toLowerCase() || "";
       const supplierGroupValue = searchSupplierGroup?.value.toLowerCase() || "";
-
       const cancelPolicyNoValue =
         searchCancelPolicyNo?.value.toLowerCase() || "";
       const transferValue = searchTransfer?.value.toLowerCase() || "";
@@ -314,11 +313,9 @@ document
       searchVisa,
       searchTour,
       searchSupplierGroup,
-
       searchFormulaType,
       searchHotelGroup,
-
-      searchCountryGroup, // 👈 added
+      searchCountryGroup,
       fromCurrencySelect,
       searchCategoryName,
       searchRoomClassName,
@@ -332,7 +329,7 @@ document
       searchPromotionName,
       searchApprovedStatus,
       searchGroupName,
-      searchHotels, // 👈 added
+      searchHotels,
       searchMealPlan,
       searchHotelsGroup,
       toCurrencySelect,
@@ -366,17 +363,15 @@ document
           searchVisa,
           searchTour,
           searchSupplierGroup,
-
           searchText,
           searchSectorName,
-          searchSupplierType, // 👈 added
+          searchSupplierType,
           searchSectorGroup,
-          searchCountryGroup, // 👈 reset
+          searchCountryGroup,
           fromCurrencySelect,
-          searchHotels, // 👈 added
+          searchHotels,
           searchHotelsGroup,
           searchPropertyType,
-
           searchCategoryType,
           searchMealPlan,
           searchRoomClassName,
@@ -389,7 +384,6 @@ document
       });
     }
 
-    // Reset dates button
     if (resetDatesBtn) {
       resetDatesBtn.addEventListener("click", () => {
         if (dateFromInput) dateFromInput.value = "";
@@ -398,7 +392,6 @@ document
       });
     }
 
-    // Export button
     if (exportBtn) {
       exportBtn.addEventListener("click", () => {
         const headersText = Array.from(table.querySelectorAll("thead th")).map(
@@ -425,7 +418,6 @@ document
       });
     }
 
-    // Populate dropdowns dynamically
     if (fromCurrencySelect) {
       const uniqueFrom = [
         ...new Set(
@@ -458,7 +450,6 @@ document
       });
     }
 
-    // Populate Country Group dropdown
     if (searchCountryGroup) {
       const uniqueGroups = [
         ...new Set(
@@ -475,6 +466,5 @@ document
       });
     }
 
-    // Initial filter
     filterTable();
   });
